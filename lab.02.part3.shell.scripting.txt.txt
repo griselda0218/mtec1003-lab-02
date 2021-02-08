@@ -22,7 +22,9 @@ What command did you use, and what was its output?
 ----------
 
 
+$ date
 
+Mon Feb  8 15:17:38 EST 2021
 
 
 
@@ -40,14 +42,15 @@ What command did you use, and what was its output?
 
 ==========
 3. Go to your home directory. 
-Then navigate to your mtec1003-lab-02 folder with a single command. 
+Then navigate to your mtec1003-lab-02. 
 Finally, verify that you're in the right place.
 
 What 3 commands did you use to do this?
 ----------
 
-
-
+cd ~
+ cd /c/Users/kiki/Desktop/myclassMTEC1003/mtec1003-lab-02
+pwd
 
 
 
@@ -58,7 +61,8 @@ Verify that the file exists.
 What commands did you use to do this?
 ----------
 
-
+touch copy_to_backup.sh.
+ls copy*
 
 
 
@@ -69,6 +73,8 @@ What commands did you use to do this?
 What command did you use to find the permissions?
 ----------
 
+$ ls -l copy*
+-rw-r--r-- 1 kiki 197121 0 Feb  8 15:46 copy_to_backup.sh.
 
 
 
@@ -81,7 +87,7 @@ Verify the new permissions.
 What commands did you use to do this?  What was the output?
 ----------
 
-
+chmod u+x
 
 
 
@@ -98,6 +104,10 @@ What command did you use to try to execute the file? What happens?
 
 
 
+bash copy_to_backup.sh
+
+
+
 
 ==========
 8. Open the file with nano
@@ -105,7 +115,7 @@ What command did you use to try to execute the file? What happens?
 What command did you use to do this?
 ----------
 
-
+nano copy_to_backup.sh
 
 
 
@@ -117,21 +127,26 @@ a. create a directory called backup
 b. copy all of the txt files in the current directory to the backup directory (use *.txt)
 c. print out "I'm done backing up"
 
-Don't forget the first line of your shell script! It should begin with #!/bin/bash)!
+Don't forget the first line of your shell script! It should begin with C)!
 
 Write out the code you typed into your file below...
 ----------
 
-
+#!/bin/bash
+mkdir backup
+cp -r -v#.txt backup
+# -r = recursive (all of files that are matched in all subfolders)
+# -v = verbose (print details for each copied file)
+echo "i'm done backing up"
 
 
 
 
 ==========
-10. Create a directory in your home folder called test
+10. Create a directory in your mtec lab 2 called test
 ----------
 
-
+mkdir test
 
 ==========
 11. Go into that directory and create two empty files... 1.txt and 2.txt
@@ -140,8 +155,9 @@ What commands did you use to do this?
 ----------
 
 
-
-
+cd test
+touch 1.txt
+touch 2.txt
 
 
 
@@ -151,7 +167,7 @@ What commands did you use to do this?
 What commands did you use to do this?
 ----------
 
-
+ mv ../copy_to_backup.sh. ./copy_to_backup.sh.
 
 
 
@@ -162,6 +178,7 @@ What commands did you use to do this?
 What commands did you use to do this?
 ----------
 
+bash copy_to_backup.sh.
 
 
 
@@ -172,7 +189,7 @@ What commands did you use to do this?  Show the output.
 ----------
 
 
-
+ls -l backup
 
 
 
